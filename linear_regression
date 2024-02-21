@@ -1,4 +1,3 @@
-from typing import List
 def predict(alpha: float, beta: float, x_i: float) -> float:
     return beta * x_i + alpha
 
@@ -17,21 +16,8 @@ def sum_of_sqerrors(alpha: float, beta: float, x: Vector, y: Vector) -> float:
 
 from typing import Tuple
 from linear_algebra import Vector
-#from statistics import correlation, standard_deviation, mean
+from statistics import correlation, standard_deviation, mean
 
-def mean(xs: List[float]) -> float:
-    return sum(xs) / len(xs)
-def standard_deviation(xs: List[float]) -> float:
-    """The standard deviation is the square root of the variance"""
-    return math.sqrt(variance(xs))
-def correlation(xs: List[float], ys: List[float]) -> float:
-    """Measures how much xs and ys vary in tandem about their means"""
-    stdev_x = standard_deviation(xs)
-    stdev_y = standard_deviation(ys)
-    if stdev_x > 0 and stdev_y > 0:
-        return covariance(xs, ys) / stdev_x / stdev_y
-    else:
-        return 0  
 def least_squares_fit(x: Vector, y: Vector) -> Tuple[float, float]:
     """
     Given two vectors x and y,
